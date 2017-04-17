@@ -7,20 +7,20 @@ from copy import deepcopy as dc
 from tqdm import tqdm
 
 """Using Algorithm
-* Binary Genatic Algorithm
+* Binary Genetic Algorithm
 * Binary Particle Swarm optimization
-* Binary Cuccko Search
+* Binary Cuckoo Search
 * Binary Firefly algorithm
 * Binary Bat Algorithm
-* Binary Gravititial Search algorithm
+* Binary Gravitational Search algorithm
 * Binary Dragon Fly Algorithm
 """
 
-"""Evaltional Function """
-class Evalution:
+"""Evaluate Function """
+class Evaluate:
     def __init__(self):
         None
-    def evalution(self,gen):
+    def evaluate(self,gen):
         None
     def check_dimentions(self,dim):
         None
@@ -47,7 +47,7 @@ def suddn(li,n_li,num):#突然変異
 
 def BGA(Eval_Func,n=20,m_i=300,mutation=0.05,minf=0,dim=None,prog=False):
     """
-    input:{ Eval_Func: Evalution_Function, type is class
+    input:{ Eval_Func: Evaluate_Function, type is class
             n: Number of population, default=20
             m_i: Number of max iteration, default=300
             mutation: Probability of mutation, default=0.05(5%)
@@ -61,7 +61,7 @@ def BGA(Eval_Func,n=20,m_i=300,mutation=0.05,minf=0,dim=None,prog=False):
             Nunber of 1s in best position: type int [0,1,1,0,1] → 3
             }
     """
-    estimate=Eval_Func().evalution
+    estimate=Eval_Func().evaluate
     if dim==None:
         dim=Eval_Func().check_dimentions(dim)
     gens=random_search(n,dim)
@@ -109,7 +109,7 @@ def sign(x): return 1 if x > 0 else (-1 if x!=0 else 0)
 
 def BPSO(Eval_Func,n=20,m_i=200,minf=0,dim=None,prog=False,w1=0.5,c1=1,c2=1,vmax=4):
     """
-    input:{ Eval_Func: Evalution_Function, type is class
+    input:{ Eval_Func: Evaluate_Function, type is class
             n: Number of population, default=20
             m_i: Number of max iteration, default=300
             minf: minimazation flag, default=0, 0=maximization, 1=minimazation
@@ -125,7 +125,7 @@ def BPSO(Eval_Func,n=20,m_i=200,minf=0,dim=None,prog=False,w1=0.5,c1=1,c2=1,vmax
             Nunber of 1s in best position: type int [0,1,1,0,1] → 3
             }
     """
-    estimate=Eval_Func().evalution
+    estimate=Eval_Func().evaluate
     if dim==None:
         dim=Eval_Func().check_dimentions(dim)
     gens=random_search(n,dim)
@@ -244,7 +244,7 @@ def levy_flight(beta,best,est,alpha):
 
 def BCS(Eval_Func,m_i=200,n=20,minf=0,dim=None,prog=False,alpha=0.1,beta=1.5,param=0.25):
     """
-    input:{ Eval_Func: Evalution_Function, type is class
+    input:{ Eval_Func: Evaluate_Function, type is class
             n: Number of population, default=20
             m_i: Number of max iteration, default=300
             minf: minimazation flag, default=0, 0=maximization, 1=minimazation
@@ -259,7 +259,7 @@ def BCS(Eval_Func,m_i=200,n=20,minf=0,dim=None,prog=False,alpha=0.1,beta=1.5,par
             Nunber of 1s in best position: type int [0,1,1,0,1] → 3
             }
     """
-    estimate=Eval_Func().evalution
+    estimate=Eval_Func().evaluate
     if dim==None:
         dim=Eval_Func().check_dimentions(dim)
     pa=param
@@ -345,7 +345,7 @@ def case9(one_bin,best):
 
 def BFFA(Eval_Func,n=20,m_i=25,minf=0,dim=None,prog=False,gamma=1.0,beta=0.20,alpha=0.25):
     """
-    input:{ Eval_Func: Evalution_Function, type is class
+    input:{ Eval_Func: Evaluate_Function, type is class
             n: Number of population, default=20
             m_i: Number of max iteration, default=300
             minf: minimazation flag, default=0, 0=maximization, 1=minimazation
@@ -358,7 +358,7 @@ def BFFA(Eval_Func,n=20,m_i=25,minf=0,dim=None,prog=False,gamma=1.0,beta=0.20,al
             Nunber of 1s in best position: type int [0,1,1,0,1] → 3
             }
     """
-    estimate=Eval_Func().evalution
+    estimate=Eval_Func().evaluate
     if dim==None:
         dim=Eval_Func().check_dimentions(dim)
     #flag=dr
@@ -465,7 +465,7 @@ def BGf(m,x,G,Rp,EC,itertion,max_iter):
 
 def BGSA(Eval_Func,n=20,m_i=200,dim=None,minf=0,prog=False,EC=1,Rp=1,f_ind=25):
     """
-    input:{ Eval_Func: Evalution_Function, type is class
+    input:{ Eval_Func: Evaluate_Function, type is class
             n: Number of population, default=20
             m_i: Number of max iteration, default=300
             minf: minimazation flag, default=0, 0=maximization, 1=minimazation
@@ -481,7 +481,7 @@ def BGSA(Eval_Func,n=20,m_i=200,dim=None,minf=0,prog=False,EC=1,Rp=1,f_ind=25):
             Nunber of 1s in best position: type int [0,1,1,0,1] → 3
             }
     """
-    estimate=Eval_Func().evalution
+    estimate=Eval_Func().evaluate
     if dim==None:
         dim=Eval_Func().check_dimentions(dim)
 
@@ -561,7 +561,7 @@ def BGSA(Eval_Func,n=20,m_i=200,dim=None,minf=0,prog=False,EC=1,Rp=1,f_ind=25):
 """BBA"""
 def BBA(Eval_Func,n=20,m_i=200,dim=None,minf=0,prog=False,qmin=0,qmax=2,loud_A=0.25,r=0.4):
     """
-    input:{ Eval_Func: Evalution_Function, type is class
+    input:{ Eval_Func: Evaluate_Function, type is class
             n: Number of population, default=20
             m_i: Number of max iteration, default=300
             minf: minimazation flag, default=0, 0=maximization, 1=minimazation
@@ -578,7 +578,7 @@ def BBA(Eval_Func,n=20,m_i=200,dim=None,minf=0,prog=False,qmin=0,qmax=2,loud_A=0
             Nunber of 1s in best position: type int [0,1,1,0,1] → 3
             }
     """
-    estimate=Eval_Func().evalution
+    estimate=Eval_Func().evaluate
     if dim==None:
         dim=Eval_Func().check_dimentions(dim)
     #flag=dr
@@ -653,7 +653,7 @@ def BBA(Eval_Func,n=20,m_i=200,dim=None,minf=0,prog=False,qmin=0,qmax=2,loud_A=0
 """BDFA"""
 def BDFA(Eval_Func,n=20,m_i=200,dim=None,minf=0,prog=False):
     """
-    input:{ Eval_Func: Evalution_Function, type is class
+    input:{ Eval_Func: Evaluate_Function, type is class
             n: Number of population, default=20
             m_i: Number of max iteration, default=300
             minf: minimazation flag, default=0, 0=maximization, 1=minimazation
@@ -666,7 +666,7 @@ def BDFA(Eval_Func,n=20,m_i=200,dim=None,minf=0,prog=False):
             Nunber of 1s in best position: type int [0,1,1,0,1] → 3
             }
     """
-    estimate=Eval_Func().evalution
+    estimate=Eval_Func().evaluate
     if dim==None:
         dim=Eval_Func().check_dimentions(dim)
     maxiter=m_i#500
