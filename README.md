@@ -5,14 +5,13 @@ This Python library is a summary of the algorithms I used for my graduation rese
 
 
 ## The implemented algorithm
-* Binary Genatic Algorithm
+* Binary Genetic Algorithm
 * Binary Particle Swarm optimization
-* Binary Cuccko Search
+* Binary Cuckoo Search
 * Binary Firefly algorithm
 * Binary Bat Algorithm
-* Binary Gravititial Search algorithm
+* Binary Gravitational Search algorithm
 * Binary Dragon Fly Algorithm
-
 
 #### Example to use
 1. Import library.
@@ -49,16 +48,17 @@ class Evalution:#setting class
 
 print("Algorithm:\n\t{0}  {1} {2}".format("best_pos","best_val","number_of_1s"))
 
-s,g,l=opt.BGA(Eval_Func=Evalution,n=20,m_i=200)
+s,g,l=opt.BGA(Eval_Func=Evaluation, n=20, m_i=200)
 print("BBA:\n\t{0}   {1}  {2}".format("".join(map(str,g)),s,l))
 
 ```
 
 ##### common arguments with algorithms
-* Eval_Func: Evalution function (class)
-* n: number of popilation (int)
+* Eval_Func: Evaluation function (class)
+* n: number of population (int)
 * m_i:  number of max iteration(int)
 * dim: number of all feature(int)
+* minf: minimization flag. min or max?(bool)
 * prog: Do you use progress bar?(bool)<p>
 <br><p>
 
@@ -80,42 +80,42 @@ In my research, I proposed reducing the feature dimension from half to one-third
   <td>accuracy</td>
   <td>number of feature</td>
 </tr>
-<tr>
+<tr align="center" >
   <td>0.84656</td>
   <td>32.48</td>
   <td>BGA</td>
   <td>0.84072</td>
   <td>21.22</td>
 </tr>
-<tr>
+<tr align="center" >
   <td>0.88000</td>
   <td>31.35</td>
   <td>BPSO</td>
   <td>0.88296</td>
   <td>18.40</td>
 </tr>
-<tr>
+<tr align="center" >
   <td>0.84400</td>
   <td>37.83</td>
   <td>BCS</td>
   <td>0.83456</td>
   <td>30.83</td>
 </tr>
-<tr>
+<tr align="center" >
   <td>0.83512</td>
   <td>18.73</td>
   <td>BFFA</td>
   <td>0.82480</td>
   <td>9.53</td>
 </tr>
-<tr>
+<tr align="center" >
   <td>0.88224</td>
   <td>30.24</td>
   <td>BBA</td>
   <td>0.84472</td>
   <td>18.16</td>
 </tr>
-<tr>
+<tr align="center" >
   <td>0.84136</td>
   <td>31.41</td>
   <td>BGSA</td>
@@ -123,7 +123,7 @@ In my research, I proposed reducing the feature dimension from half to one-third
   <td>22.68</td>
 </tr>
 
-<tr>
+<tr align="center" >
   <td>0.86624</td>
   <td>30.77</td>
   <td>BDFA</td>
