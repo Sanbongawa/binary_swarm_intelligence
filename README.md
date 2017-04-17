@@ -23,13 +23,13 @@ This Python library is a summary of the algorithms I used for my graduation rese
 ```python
 import binary_optimization as opt#import library
 
-class Evalution:#setting class
+class Evaluate:#setting class
     def __init__(self):#set train_data,label,test_data,label
         self.train_l=tr_l
         self.train_d=tr_d
         self.test_l=te_l
         self.test_d=te_d
-    def evalution(self,gen):
+    def evaluate(self,gen):
         """
         Setting of evaluation function.
         Here, the correct answer rate is used.
@@ -48,13 +48,13 @@ class Evalution:#setting class
 
 print("Algorithm:\n\t{0}  {1} {2}".format("best_pos","best_val","number_of_1s"))
 
-s,g,l=opt.BGA(Eval_Func=Evaluation, n=20, m_i=200)
+s,g,l=opt.BGA(Eval_Func=Evaluate, n=20, m_i=200)
 print("BBA:\n\t{0}   {1}  {2}".format("".join(map(str,g)),s,l))
 
 ```
 
 ##### common arguments with algorithms
-* Eval_Func: Evaluation function (class)
+* Eval_Func: Evaluate function (class)
 * n: number of population (int)
 * m_i:  number of max iteration(int)
 * dim: number of all feature(int)
