@@ -1,4 +1,4 @@
-"""Using libraly"""
+"""Using Libraly"""
 import numpy as np
 import random
 from itertools import combinations as cb
@@ -27,6 +27,14 @@ class Evaluate:
 
 """Common Function"""
 def random_search(n,dim):
+    """
+    create genes list
+    input:{ n: Number of population, default=20
+            dim: Number of dimension
+    }
+    output:{genes_list → [[0,0,0,1,1,0,1,...]...n]
+    }
+    """
     gens=[[0 for g in range(dim)] for _ in range(n)]
     for i,gen in enumerate(gens) :
         r=random.randint(1,dim)
