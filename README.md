@@ -1,5 +1,5 @@
 # binary_swarm_intelligence
- Libraries of binary swarm intelligence mainly used for obtaining optimal solution of feature selection
+ Library of binary swarm intelligence mainly used for obtaining optimal solution of feature selection
 
 This Python library is a summary of the algorithms I used for my graduation research at bachelor.
 
@@ -49,7 +49,7 @@ class Evaluate:#setting class
 print("Algorithm:\n\t{0}  {1} {2}".format("best_pos","best_val","number_of_1s"))
 
 s,g,l=opt.BGA(Eval_Func=Evaluate, n=20, m_i=200)
-print("BBA:\n\t{0}   {1}  {2}".format("".join(map(str,g)),s,l))
+print("BGA:\n\t{0}   {1}  {2}".format("".join(map(str,g)),s,l))
 
 ```
 
