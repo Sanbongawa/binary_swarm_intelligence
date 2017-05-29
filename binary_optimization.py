@@ -227,7 +227,7 @@ def BPSO(Eval_Func,n=20,m_i=200,minf=0,dim=None,prog=False,w1=0.5,c1=1,c2=1,vmax
         for i in range(n):
             for j in range(dim):
                 if temp[i][j]<veln[i][j]:
-                    gens[i][j]= 0 if gens[i][j] ==1else 1
+                    gens[i][j]= 0 if gens[i][j] ==1 else 1
                 else:
                     pass
     return gbest,xgbest,xgbest.count(1)
