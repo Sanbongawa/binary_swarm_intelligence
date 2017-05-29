@@ -25,7 +25,6 @@ import binary_optimization as opt#import library
 import numpy as np
 from sklearn import svm
 
-
 class Evaluate:#setting class
     def __init__(self):#set train_data,label,test_data,label
         self.train_l=tr_l
@@ -41,8 +40,10 @@ class Evaluate:#setting class
         mask=np.array(gen) > 0
         al_data=np.array([al[mask] for al in self.train_d])
         al_test_data=np.array([al[mask] for al in self.test_d])
+        #↑masking with [01]sequence list
         res=svm.LinearSVC().fit(al_data,self.train_l).predict(al_test_data)
         return np.count_nonzero(self.test_l==res)/len(self.test_l)
+        #↑evaluate with fittness function
     def check_dimentions(self,dim):#check number of all feature
         if dim==None:
             return len(self.train_d[0])
