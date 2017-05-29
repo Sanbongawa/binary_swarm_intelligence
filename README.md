@@ -22,6 +22,9 @@ This Python library is a summary of the algorithms I used for my graduation rese
 #### Example code: Suppose svm is used
 ```python
 import binary_optimization as opt#import library
+import numpy as np
+from sklearn import svm
+
 
 class Evaluate:#setting class
     def __init__(self):#set train_data,label,test_data,label
