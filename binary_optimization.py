@@ -117,7 +117,8 @@ def sign(x): return 1 if x > 0 else (-1 if x!=0 else 0)
 
 def BPSO(Eval_Func,n=20,m_i=200,minf=0,dim=None,prog=False,w1=0.5,c1=1,c2=1,vmax=4):
     """
-    input:{ Eval_Func: Evaluate_Function, type is class
+    input:{ 
+            Eval_Func: Evaluate_Function, type is class
             n: Number of population, default=20
             m_i: Number of max iteration, default=300
             minf: minimazation flag, default=0, 0=maximization, 1=minimazation
@@ -128,7 +129,8 @@ def BPSO(Eval_Func,n=20,m_i=200,minf=0,dim=None,prog=False,w1=0.5,c1=1,c2=1,vmax
             vmax: Limit search range of vmax, default=4
             }
 
-    output:{Best value: type float 0.967
+    output:{
+            Best value: type float 0.967
             Best position: type list(int) [1,0,0,1,.....]
             Nunber of 1s in best position: type int [0,1,1,0,1] → 3
             }
